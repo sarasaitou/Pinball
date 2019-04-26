@@ -4,43 +4,51 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class ScoreController : MonoBehaviour {
-	private GameObject scoreText;
 	private int score = 0;
+	private GameObject scoreText;
+
 
 
 	// Use this for initialization
-	void Start () {
-		this.scoreText = GameObject.Find("Score");
-	}
+
 
 	void OnCollisionEnter(Collision collision) {
 
-		string textscore = this.score.ToString();
+
 		
 		if (collision.gameObject.tag == "SmallStarTag") {
 			//スコア処理を追加
 			this.score +=1;
+			string textscore = this.score.ToString();
 			this.scoreText.GetComponent<Text>().text= textscore;
 
 		}
 		if (collision.gameObject.tag == "LargeStarTag") {
 			//スコア処理を追加
 			this.score +=5;
+			string textscore = this.score.ToString();
 			this.scoreText.GetComponent<Text>().text= textscore;
 
 		}
 		if (collision.gameObject.tag == "SmallCloudTag") {
 			//スコア処理を追加
 			this.score +=10;
+			string textscore = this.score.ToString();
 			this.scoreText.GetComponent<Text>().text= textscore;
 
 		}
 		if (collision.gameObject.tag == "LargeCloudTag") {
 			//スコア処理を追加
 			this.score +=20;
+			string textscore = this.score.ToString();
 			this.scoreText.GetComponent<Text>().text= textscore;
 
 		}
+
+	}
+
+	void Start () {
+		this.scoreText = GameObject.Find("Score");
 	}
 
 
